@@ -1,10 +1,13 @@
-const withSourceMaps = require("@zeit/next-source-maps")
-const withCSS = require("@zeit/next-css")
+/**
+ * <https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config>
+ */
 
-module.exports = withSourceMaps(
-  withCSS({
-    webpack(config, options) {
-      return config
-    },
-  })
-)
+module.exports = {
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.css$/,
+      loader: "raw-loader",
+    })
+    return config
+  },
+}

@@ -1,17 +1,9 @@
-import styled from "@emotion/styled"
-import { addOne } from "~/lib/example"
+import { Component } from "~/component"
 
-const Container = styled.div`
-  margin: 1em;
-  max-width: 32em;
-`
-const Title = styled.h1``
-
-export default function () {
+export default function Index() {
   return (
-    <Container className="card card-body">
-      <Title>Hello World</Title>
-      <p>Luck number {addOne(6)}</p>
-    </Container>
+    <div>
+      <Component />
+    </div>
   )
 }
